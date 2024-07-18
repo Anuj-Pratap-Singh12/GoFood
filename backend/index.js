@@ -1,6 +1,15 @@
 const express = require("express");
 const app = express();
 const port = 5000;
+
+app.use(cors(
+  {
+    origin : ["https://deploy-mern-lwhq.vercel.app"],
+    methods : ["POST","GET] ,
+    credentials : true ,
+  } 
+))
+               
 const mongodb = require("./db"); // Ensure db.js is imported to establish the database connection
 mongodb();
 
